@@ -1,0 +1,10 @@
+If you want to insert a value in an array (.insert(1, value)) (dynamic list), 
+then within the list all the values below ‘1’ have to be copied and go down. 
+However, if you reached the initial memory capacity, then it adds some space 
+(previous capacity + previous capacity *2), copies all the elements and inserts 
+the new value. Time complexity is O(n). And this is not efficient. Instead try a 
+linked list (линейный список), it has nodes (узлы), which contain a piece of data 
+and a link to the next node. The last node’s link is Null. Now you do not have 
+to copy all the elements, But you have to change the link of the previous node 
+and assign value and the link to the next one. In doubly linked list, 
+you have a link to your previous element as well.

@@ -1,0 +1,10 @@
+Big O Complexity
+
+                   Array   Linked List
+Indexing --------- O(1) -- O(n)
+Insert/Delete ---- O(n) -- O(1)
+Element At Start
+Insert/Delete ---- O(1) -- O(n)
+Element At End
+Insert/Delete ---- O(n) -- O(n)
+Element In Middle

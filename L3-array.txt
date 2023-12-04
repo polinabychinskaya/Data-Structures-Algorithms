@@ -1,0 +1,8 @@
+In python, a list is implemented as a dynamic array. 
+In other languages like Java, C++ we have static and dynamic arrays both. 
+In static arrays, when the size is fixed, you cannot insert any other value. 
+In a dynamic array, you do not have to specify the size. It will not preserve 
+the limited amount of space but the ‘initial capacity’ (striped) and free space 
+can be used by other programs (gray area). If the number of allowed values exceeds, 
+it allocates more additional capacity of memory (the initial size * by 2) and 
+copies the previous elements to a new object. It works like a mathematical progression.

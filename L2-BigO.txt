@@ -1,0 +1,39 @@
+Big O notation is used to measure how running time or space 
+requirements for your program grow as input size grows.
+
+!!! Measuring the runtime in absolute terms is not efficient, 
+it has to be mathematically represented, as different machines have different capacities.
+
+How to calculate?
+1. Keep the fastest growing term (b is constant, a*n growth faster)
+2. Drop constants (the constant is a, so we withhold only n)
+3. Result: the Big O time complexity for this program is order of n
+
+Big O Types:
+-- O(1) - Constant Time: This notation represents an algorithm 
+   that takes a constant amount of time to run, regardless of the input size. 
+   An example is accessing an element in an array by its index.
+
+-- O(n) - Linear Time: This notation represents an algorithm whose 
+   running time grows linearly with the input size. An example is 
+   iterating through each element in an array to find a specific value.
+
+-- O(n^2) - Quadratic Time: This notation represents an algorithm whose 
+   running time grows quadratically with the input size. An example is 
+   nested loops where each loop iterates over the input size.
+
+-- O(log n) - Logarithmic Time: This notation represents an algorithm 
+   whose running time grows logarithmically with the input size. 
+   An example is binary search, where the input is divided in half at each step.
+
+-- O(n log n) - Linearithmic Time: This notation represents an algorithm whose 
+   running time is a product of linear and logarithmic growth. An example 
+   is efficient sorting algorithms like merge sort and quicksort.
+
+-- O(2^n) - Exponential Time: This notation represents an algorithm whose 
+   running time grows exponentially with the input size. An example is 
+   the brute-force approach to solving the traveling salesman problem.
+   ### In the TSP, a salesman is given a list of cities and must find 
+   the shortest possible route that visits each city exactly once and 
+   returns to the starting city. The problem is to determine the optimal 
+   order in which the cities should be visited to minimize the total distance traveled.
