@@ -1,5 +1,5 @@
 # We use tree to represent a hierarchy 
-# (folder structure)
+# (folder structure) 
 class TreeNode:
     def __init__(self, name, designation):
         self.name = name
