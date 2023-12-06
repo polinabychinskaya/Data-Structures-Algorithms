@@ -1,0 +1,40 @@
+RAM (random access memory) - a storage which keeps data (lake variables)
+to track progress that we are making in our applications
+
+RAM consists of two parts (a stack and a heap): the heap is 
+responsible for storing for all the variables and values, 
+the stack is responsible for holding the references 
+to the objects in the heap
+
+# Example
+If you declared a var like student_grade = "A", 
+the computer allocates memory in the heap for the str "A",
+and in stack it creates a reference to the object
+So, the variable student_grade actually holds the link, 
+not the object itself
+
+# Example: return the address object in the heap
+word1 = 'programming'
+print(id(word1))
+word2 = 'programming'
+print(id(word2))
+Output: both addresses are the same as the reference the same object
+
+# Example: comparing actual objects 
+print(word1 is word2) #  Is the word1 the same obj as the word2?
+True
+
+Objects are mutable (list is stored as one obj, 
+so if we change some objects in it, it is still the same obj) 
+and immutable (str, int)
+word1 = 'programming'
+# It does not overrides the old obj, 
+but changes the link in word1 and creates a new obj in the heap
+Since word1 no longer references 'programming', 
+however word2 does, the  ref count is 1
+If word2 value changes, the ref count for coding equals 0, 
+garabage collector destroys the object in the heap
+word1 = 'coding'
+print(id(word1))
+word2 = 'programming'
+print(id(word2))
