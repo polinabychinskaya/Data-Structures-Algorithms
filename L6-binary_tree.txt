@@ -1,0 +1,43 @@
+What kind of problem does binary tree solve?
+There is a structure in python like set 
+(it is like a list, however it checks whether the values are unique), so to implement a set 
+you can use binary search tree (BST)
+BST's node has at most 2 elements
+            1
+    --------|-------
+    |               |
+    2               3
+            --------|-------
+            |               |
+            4               5
+
+It's important to note that these properties hold true for a standard implementation of a BST
+1. BST has some kind of order. For example, if you take an element, all of the elments 
+on the left-hand side of the node are less than the value of this node 
+and on the right-hand side are bigger (pic above)
+2. No duplicates
+
+!!With a BST you reduce your search set of values by half
+
+Search complexity:
+Every iteration we reduce search space by 1/2
+n = 8           8 -> 4 -> 2 -> 1
+3 iterations
+log2 8 = 3
+Search complexity = O(log n)
+
+Inserting the element:
+You search for the place of the new value to hold the properties true
+
+Searching:
+- Breadth first search (ширина)
+- Depth first search (глубина)
+--- In order traversal [7, 12, 14, 15, 20, 23, 27, 88] assuming the root node is 15
+--- Pre order traversal [15, 12,  7, 14, 27, 23, 88]
+--- Post order traversal [7, 14, 12, 23, 20, 88, 27, 15]
+
+Deleting a node:
+Option 1: Deleting a node that has no child --> you just remove a leaf node
+Option 2: Deleting a node with 1 child --> you remove the node you want, and place the child at its position
+Option 3: Deleting a node with 2 children --> after deletion, you have to rebalance your tree, 
+so that the basic properties of BT hold true
