@@ -1,0 +1,49 @@
+If you have an excel table of dates 
+and corresponding stock prices, you can use 'with open
+stock_prices.csv' and append to the list (array)
+
+However if you have millions of records, then it's not efficint
+as the searching operation is O(n)
+If you use a structure which is similar to the dict, the
+time complexity reduces to O(1), as you do not have to iterate 
+through a loop
+
+In Python, a dictionary is implemented internally as a hash table. 
+A hash table is a data structure that allows efficient lookup, 
+insertion, and deletion of key-value pairs. It uses a hash function 
+to map keys to indices in an underlying array.
+
+When a dictionary is created in Python, it allocates an underlying 
+array with a certain initial size. As key-value pairs are added to 
+the dictionary, the hash function is applied to each key to determine 
+its index in the array. The value associated with the key is then 
+stored at that index.
+
+As the number of key-value pairs in the dictionary grows, 
+Python may resize the underlying array to maintain efficient 
+performance. This process involves creating a new, larger 
+array and rehashing the existing key-value pairs into the new array.
+
+#Example of a hash function with ASCII 
+(American standard code for information interchange)
+Let's say we have a key named 'march 6', so according to the table
+(converting a character into a decimal rep)
+m -> 109 a -> 97 r -> 114 c -> 99 h ->104 space -> 32 6 -> 609
+the sum of all chars = 609
+Now MOD(609, 10) -> 9 (the remainder)
+So for a hash func the index 'march 6' equals 9
+
+Time Complexity:
+Look up by index --> O(1)
+Insertion/Deletion --> O(1)
+
+Collisions --> When 2 keys get the same hashed value
+-- Chaining -> storing a linked list at every location, 
+if collision happens we append to that list new kv pair
+O(n). So we store each key within the values, 
+even though they are stored in the same busket 
+to know exactly what we wanna reach
+
+Linear probing --> If we hashed the key and identified 
+that we already have something at this location, 
+we go to the next available location

@@ -1,0 +1,14 @@
+# Linear search
+To find a value you have to iterate through the collection 
+and compare to the value you are looking for
+So the time complexity is O(n)
+
+# Binary search
+-- the list is sorted
+-- you split the list and find the median
+-- you compare with the searched value, if it's bigger than the median 
+than we move to the right and vice versa, so kth iteration = n/(2^k)
+log2 n = log2 2^k
+log2 n = klog2 2
+log2 n = k
+Search complexity is O(log2 n)

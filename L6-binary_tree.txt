@@ -41,3 +41,66 @@ Option 1: Deleting a node that has no child --> you just remove a leaf node
 Option 2: Deleting a node with 1 child --> you remove the node you want, and place the child at its position
 Option 3: Deleting a node with 2 children --> after deletion, you have to rebalance your tree, 
 so that the basic properties of BT hold true
+
+Difference between Binary tree and B-Tree
+### The depth of a node is the number of edges present in path from the root node of a tree to that node.
+### The height of a node is the number of edges present in the longest path connecting that node to a leaf node.
+### A B-tree is a specific type of tree which, among other things, has a maximum number of children per node. 
+    The order of a B-tree is that maximum. A Binary Search Tree, for example, has an order of 2.
+    The degree of a node is the number of children it has. So every node of a B-tree has a degree greater than or
+    equal to zero and less than or equal to the order of the B-tree.
+### The nodes are indeed sorted in the inorder traversal, meaning that when traversing the tree in inorder (left, root, right), 
+    the values are visited in ascending order.
+### In computer science, a self-balancing data structure, such as a self-balancing tree, refers to a data structure that automatically
+    maintains a balanced state during insertions, deletions, or other operations. The term "self-balancing" means that the data 
+    structure takes care of maintaining a balance without requiring explicit intervention from the user.
+
+B-Tree is known as a self-balancing tree as its nodes are sorted in the inorder traversal. 
+Unlike the binary trees, in B-tree, a node can have more than two children. B-tree has 
+a height of logM N (Where ‘M’ is the order of tree and N is the number of nodes). And the height is adjusts 
+automatically at each update. In the B-tree data is sorted in a specific order, with the lowest value 
+on the left and the highest value on the right. To insert the data or key in B-tree is more complicated than binary tree.
+There are some conditions that must be hold by the B-Tree:
+-- All the leaf nodes of the B-tree must be at the same level.
+-- Above the leaf nodes of the B-tree, there should be no empty sub-trees.
+-- B- tree’s height should lie as low as possible.
+
+A binary tree is the special type of general tree. Unlike B-tree, in a binary tree a node 
+can have at most two nodes. In a binary tree, there is a limitation on the degree of a node because 
+the nodes in a binary tree can’t have more than two child node(or degree two). 
+The topmost node of a binary tree is called root node and there are mainly two subtrees one is 
+left-subtree and another is right-sub-tree. Unlike the general tree, the binary tree can be empty. 
+Like B-tree, binary tree can also be sorted in inorder traversal. But it can also be sorted in preorder 
+as well as postorder. In binary tree, data insertion is not complicated than B-tree.
+
+            B-tree                              Binary tree
+-------------------------------------------------------------------------
+In a B-tree, a node can have maximum | While in binary tree,  
+‘M'(‘M’ is the order of the tree)    | a node can have maximum two child
+number of child nodes.               | nodes or sub-trees.                        
+                                     |
+-------------------------------------------------------------------------  
+B-tree is called a sorted tree as    | While binary tree is not a sorted  
+its nodes are sorted in inorder      | tree. It can be sorted in inorder,
+traversal.                           | preorder, or postorder traversal.
+                                     |
+-------------------------------------------------------------------------
+B-tree has a height of log(M*N)      | While binary tree has a height of
+(Where ‘M’ is the order of tree and  | log2(N) (Where N is the nimber of
+N is the number of nodes).           | nodes)
+-------------------------------------------------------------------------
+B-Tree is performed when the data    | Binary tree is performed when the 
+is loaded into the disk.             | data is loaded in the RAM
+-------------------------------------------------------------------------|
+B-tree is used in DBMS               | Used in code optimization
+(code indexing, etc).                |
+-------------------------------------------------------------------------
+To insert the data or key in         | Data insertion is less complicated
+B-tree is more complicated than      | than B-tree
+a binary tree.                       |
+-------------------------------------------------------------------------
+B-tree is a self-balancing tree.     | Not a self-balancing tree
+The height of the tree is            |
+automatically adjusted on each       |
+update.                              |
+-------------------------------------------------------------------------

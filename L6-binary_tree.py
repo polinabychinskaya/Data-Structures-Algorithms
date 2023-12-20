@@ -1,3 +1,4 @@
+
 class BinarySearchTreeNode:
     def __init__(self, data):
         self.data =data
@@ -28,16 +29,16 @@ class BinarySearchTreeNode:
 
     # In order traversal method - 
     # returns a tree in an ascending order
-    def in_order_traversal(self):
+    def in_order_traversal(self, level=1):
         elements = []
         # Examine the left tree
         if self.left:
-            elements += self.left.in_order_traversal()
+            elements += self.left.in_order_traversal(level + 1)
         # Examine the root tree
-        elements.append(self.data)
+        elements.append((self.data, level))
         # Examine the right tree
         if self.right:
-            elements += self.right.in_order_traversal()
+            elements += self.right.in_order_traversal(level + 1)
         return elements
     
     def search(self, value):
@@ -107,6 +108,31 @@ class BinarySearchTreeNode:
 
         return self
 
+def invert_binary_tree(root):
+    if root is None:
+        return None
+
+    # Swap the left and right subtrees
+    root.left, root.right = root.right, root.left
+
+    # Invert the left and right subtrees recursively
+    invert_binary_tree(root.left)
+    invert_binary_tree(root.right)
+
+    return root
+
+
+def print_binary_tree(root):
+    print_tree(root, 0)
+
+def print_tree(node, level):
+    if node is None:
+        return
+    if node == node.data:
+        print(str(node.data))
+    print_tree(node.right, level + 1)
+    print('  ' * level + str(node.data))
+    print_tree(node.left, level + 1)
 
 def build_tree(elements):
     root =BinarySearchTreeNode(elements[0])
@@ -114,7 +140,11 @@ def build_tree(elements):
         root.add_child(elements[i])
     return root
 
-elements = [8, 4, 7, 2, 13, 7]
+elements = [20, 8, 4, 7, 2, 13, 7, 45, 32, 89, 2, 48, 12]
 build = build_tree(elements) 
-build.delete(8)
+
+
+print_binary_tree(build)
 print(build.in_order_traversal())
+inverted_root = invert_binary_tree(build)
+print_binary_tree(inverted_root)
