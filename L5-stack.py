@@ -19,6 +19,7 @@ stack = deque()
 stack.append('https://www.cnn.com/')
 stack.append('https://www.cnn.com/world/')
 stack.append('https://www.cnn.com/europe/')
+print('-----------')
 print(stack.pop())
 
 class Stack():

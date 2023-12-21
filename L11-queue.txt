@@ -1,0 +1,18 @@
+Producer - consumer problem 
+                                    Queue
+            ----------------------------------------------------
+Producer --> Stock 1 (11:00, 131.10$) | Stock 1 (11:01, 132.30$) --> Consumer
+            ----------------------------------------------------
+The producer-consumer problem is a classic synchronization problem 
+in computer science. It involves coordinating the actions of two 
+processes, a producer and a consumer, that share a common buffer 
+or queue. The producer is responsible for producing items and 
+placing them into the buffer, while the consumer consumes 
+these items from the buffer.
+
+If we send data (exchange rate) directly for instance 
+from a stock exchange to a bank and if a server of a reciever breaks 
+and the data is sent, when the server is down, some pieces of 
+that period might be lost. To prevent it, we can use a queue as an intermediary.
+
+The queue is based on FIFO (first in, first out)
