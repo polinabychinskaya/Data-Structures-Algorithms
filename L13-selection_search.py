@@ -22,3 +22,5 @@ def selectionSort(elements):
 
 elements = [1, 5, 0, 35, 65, 3]
 print(selectionSort(elements))
+
+# Time complexity O(n^2)
