@@ -1,0 +1,21 @@
+Imagine you have 2 sorted arrays and you want to merge 
+them in one list
+And you take the first values of both lists and compare them 
+Then you move forward comparing 
+the elemnts and placing them in ascending order
+
+What if you have an unordered list like this, then you split it and merge
+
+            [3 2 1 4]
+                |
+        [3 2]       [1 4]
+          |           | 
+    [3]     [2]   [1]    [4]
+          |           |
+         [2 3]       [1 4]
+                |
+            [1 2 3 4]
+
+Time complexity nlogn
+
+In python .sort() uses merge and insert sort
