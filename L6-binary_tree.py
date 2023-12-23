@@ -102,19 +102,16 @@ def invert_binary_tree(root):
 
     return root
 
-def print_binary_tree(root):
-    print_tree(root, 0)
-
-def print_tree(node, level):
+def visualise_tree(node, level=0):
     if node is None:
         return
     if node == node.data:
         # Print the root node
         print(str(node.data))
     # Print sunsequent nodes
-    print_tree(node.right, level + 1)
+    visualise_tree(node.right, level + 1)
     print('  ' * level + str(node.data))
-    print_tree(node.left, level + 1)
+    visualise_tree(node.left, level + 1)
 
 
 numbers_tree = build_tree([17, 4, 1, 20, 9, 23, 18, 34])
@@ -123,7 +120,7 @@ print("After deleting 20 ",numbers_tree.in_order_traversal())
 print(f'This is the minimum value: {numbers_tree.find_max()}, this is the maximum value {numbers_tree.find_min()}')
 inverted = invert_binary_tree(numbers_tree)
 print(inverted.in_order_traversal())
-print_binary_tree(inverted)
+visualise_tree(inverted)
 
 
 
