@@ -19,3 +19,16 @@ What if you have an unordered list like this, then you split it and merge
 Time complexity nlogn
 
 In python .sort() uses merge and insert sort
+
+The key insight is that the number of comparisons required to merge two sorted halves 
+of an array is proportional to the total number of elements being merged. 
+In each merge step, the algorithm compares elements from both halves and 
+places them in the correct order. Since the algorithm always divides the array in 
+half and takes linear time to merge two halves, the time complexity of each merge step is O(n), 
+where n is the total number of elements being merged.
+
+The number of merge steps required can be expressed as log n, where n is the size of the 
+input array. This is because the array is divided in half at each recursive step until it reaches 
+the base case of single elements. Therefore, the total time complexity of merge sort is the product 
+of the time complexity of each merge step (O(n)) and the number of merge steps (log n), 
+resulting in a time complexity of O(n log n).
